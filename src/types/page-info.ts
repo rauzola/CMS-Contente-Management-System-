@@ -26,3 +26,13 @@ export type BioPageInfo = {
 export type HomePageData = {
   page: BioPageInfo;
 };
+
+export type Asset = {
+  assets: any;
+  createdAt: string;
+  id: string;
+  publishedAt: string;
+  fileName: string;
+  url: string;
+  updatedAt: string;
+};

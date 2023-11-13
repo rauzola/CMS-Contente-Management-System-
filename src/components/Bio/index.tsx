@@ -8,26 +8,17 @@ type BioInfoProps = {
 };
 
 export default function BioComponents({ bioInfo }: BioInfoProps) {
-  console.log(bioInfo.introduction.raw);
+  // console.log(bioInfo.introduction);
+  
   return (
-    <>
-      <h1>asdasdasds</h1>
+
       <div>
-        <RichText content={bioInfo.introduction.raw} />
-        <br />
-        {bioInfo.technologies.map((tech) => (
-          <p>{tech.name}</p>
-        ))}
+      <h1>asdasdasds</h1>
+         <RichText content={bioInfo.introduction.raw} />
         <br />
 
-        {bioInfo.socials.map((contact, index) => (
-          <a href={contact.url}>
-            url asdasdasd
-            <CMSIcon icon={contact.iconSvg} />
-          </a>
-        ))}
-        
+
       </div>
-    </>
+    
   );
 }
