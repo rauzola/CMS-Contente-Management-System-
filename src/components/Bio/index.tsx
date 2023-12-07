@@ -1,24 +1,22 @@
-import { BioPageInfo } from "@/types/page-info";
+import { Asset } from "@/types/page-info";
 import React from "react";
-import { RichText } from "../rich-text";
-import { CMSIcon } from "../cms-icon";
 
-type BioInfoProps = {
-  bioInfo: BioPageInfo;
-};
-
-export default function BioComponents({ bioInfo }: BioInfoProps) {
-  // console.log(bioInfo.introduction);
-  
+export default function BioComponents({
+  fileName,
+  createdAt,
+  publishedAt,
+  updatedAt,
+  url,
+}: Asset) {
   return (
-
-      <div>
-      <h1>asdasdasds</h1>
-         <RichText content={bioInfo.introduction.raw} />
-        <br />
-
-
-      </div>
-    
+    <div>
+      <a>{fileName}</a><br />
+      <a>{createdAt}</a><br />
+      <a>{publishedAt}</a><br />
+      <a>{updatedAt}</a>
+      <img src={url} alt="" style={{ width: '200px', height: '200px' }} />
+      <br />
+      <br />
+    </div>
   );
 }
