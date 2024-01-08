@@ -7,7 +7,7 @@ export default function Home() {
   
   return (
    <>
-    <Slider />
+   <h1>dasdasd</h1>
    </>
   );
 }
