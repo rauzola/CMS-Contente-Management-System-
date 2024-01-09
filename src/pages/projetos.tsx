@@ -23,21 +23,19 @@ export default function Projetos() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {images.map((image, index) => (
-            <Image
+            <div
               key={index}
-              alt={`Projeto ${index + 1}`}
-              className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+              className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 overflow-hidden"
               style={{ transform: 'translate3d(0, 0, 0)' }}
-              placeholder="blur"
-              // blurDataURL={blurDataUrl}
-              src={image}
-              width={720}
-              height={480}
-              sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-            />
+            >
+              <Image
+                alt={`Projeto ${index + 1}`}
+                placeholder="blur"
+                // blurDataURL={blurDataUrl}
+                src={image}
+                className="object-cover w-full h-48 md:h-64 lg:h-80"  // Defina a altura desejada aqui
+              />
+            </div>
           ))}
         </div>
       </div>
