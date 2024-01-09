@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["./src/types.d.ts"],  // Substitua pelo caminho real do seu arquivo types.d.ts
     "paths": {
       "@/*": ["./src/*"]
     }

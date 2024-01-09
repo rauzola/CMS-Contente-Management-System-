@@ -50,7 +50,7 @@ export default function Slider() {
             <ul className="mt-8 flex flex-wrap justify-center gap-4">
               <li>
                 <Link
-                  className="text-white  transition hover:text-white/75 uppercase"
+                  className="text-white  transition hover:text-white/75 uppercase "
                   href="/projetos"
                 >
                   PROJETOS
