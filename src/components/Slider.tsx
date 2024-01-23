@@ -9,37 +9,32 @@ import image3 from "/public/image/Celso Pilati -0019.jpg";
 import image4 from "/public/image/Celso Pilati -0041.jpg";
 
 export default function Slider() {
-  // Importa todas as imagens da pasta /public/image/ que têm a extensão .jpg
   const images: StaticImageData[] = [image1, image2, image3, image4];
-  const imageKeys = images.keys();
 
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  // Função para avançar para a próxima imagem
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   useEffect(() => {
-    // Alterne a imagem a cada 3 segundos (3000 milissegundos)
     const interval = setInterval(() => {
       nextImage();
-    }, 3000);
+    }, 5000);
 
-    // Limpe o intervalo quando o componente for desmontado
     return () => clearInterval(interval);
   }, [currentImageIndex]);
 
   return (
     <div className="relative h-screen">
-      <div className="absolute inset-0 z-10 transition-opacity duration-3000">
+      <div className="absolute inset-0 z-10 transition-opacity duration-1000">
         <Image
-          key={images[currentImageIndex].src} // Use o caminho da imagem como chave
+          key={images[currentImageIndex].src}
           src={images[currentImageIndex]}
           layout="fill"
           objectFit="cover"
           alt="Descrição da imagem"
-          className="duration-1000"
+          className="opacity-100 transition-all duration-1000 ease-in-out"
         />
       </div>
 
