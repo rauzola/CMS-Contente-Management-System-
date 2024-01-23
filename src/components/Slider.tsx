@@ -1,6 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { wrap } from "popmotion";
+
+import Image from "next/image";
 import Link from "next/link";
 
 import image1 from "/public/image/Celso Pilati -0007.jpg";
@@ -8,40 +10,87 @@ import image2 from "/public/image/Celso Pilati -0016.jpg";
 import image3 from "/public/image/Celso Pilati -0019.jpg";
 import image4 from "/public/image/Celso Pilati -0041.jpg";
 
+const images = [image1, image2, image3, image4];
+
+const variants = {
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+};
+
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity;
+};
+
 export default function Slider() {
-  // Importa todas as imagens da pasta /public/image/ que têm a extensão .jpg
-  const images: StaticImageData[] = [image1, image2, image3, image4];
-  const imageKeys = images.keys();
+  const [[page, direction], setPage] = useState([0, 0]);
 
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const imageIndex = wrap(0, images.length, page);
 
-  // Função para avançar para a próxima imagem
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const paginate = (newDirection: number) => {
+    setPage([page + newDirection, newDirection]);
   };
 
   useEffect(() => {
-    // Alterne a imagem a cada 3 segundos (3000 milissegundos)
-    const interval = setInterval(() => {
-      nextImage();
-    }, 3000);
+    const intervalId = setInterval(() => {
+      paginate(1); // Mude para a próxima imagem a cada 5 segundos
+    }, 5000);
 
-    // Limpe o intervalo quando o componente for desmontado
-    return () => clearInterval(interval);
-  }, [currentImageIndex]);
+    return () => clearInterval(intervalId); // Limpa o intervalo quando o componente é desmontado
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   return (
     <div className="relative h-screen">
-      <div className="absolute inset-0 z-10 transition-opacity duration-3000">
-        <Image
-          key={images[currentImageIndex].src} // Use o caminho da imagem como chave
-          src={images[currentImageIndex]}
-          layout="fill"
-          objectFit="cover"
-          alt="Descrição da imagem"
-          className="duration-1000"
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.img
+          key={page}
+          src={images[imageIndex].src}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover", // Garante que a imagem cubra completamente o contêiner
+          }}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = swipePower(offset.x, velocity.x);
+
+            if (swipe < -swipeConfidenceThreshold) {
+              paginate(1);
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1);
+            }
+          }}
         />
-      </div>
+      </AnimatePresence>
 
       <div className="absolute inset-0 bg-black opacity-50 z-20"></div>
       <div className="absolute inset-0 z-30 flex items-center justify-center">
