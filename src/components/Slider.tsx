@@ -12,6 +12,7 @@ import image1 from "/public/image/Celso Pilati -0007.jpg";
 import image2 from "/public/image/Celso Pilati -0016.jpg";
 import image3 from "/public/image/Celso Pilati -0019.jpg";
 import image4 from "/public/image/Celso Pilati -0041.jpg";
+import Sociais from "./Sociais";
 
 export default function Slider() {
   const images: StaticImageData[] = [image1, image2, image3, image4];
@@ -56,7 +57,6 @@ export default function Slider() {
                   PROJETOS
                 </Link>
               </li>
-
               <li>
                 <Link
                   className="text-white transition hover:text-white/75 uppercase"
@@ -65,7 +65,6 @@ export default function Slider() {
                   SOBRE
                 </Link>
               </li>
-
               <li>
                 <Link
                   className="text-white transition hover:text-white/75 uppercase"
@@ -74,7 +73,6 @@ export default function Slider() {
                   MÍDIA
                 </Link>
               </li>
-
               <li>
                 <Link
                   className="text-white transition hover:text-white/75 uppercase"
@@ -84,45 +82,8 @@ export default function Slider() {
                 </Link>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
 
-      <div className="absolute inset-0 bg-black opacity-50 z-20"></div>
-      <div className="absolute inset-0 z-30 flex items-end justify-end">
-        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-end">
-          <div className="mx-auto max-w-xl text-end">
-            <ul className="mt-8 flex flex-wrap justify-end gap-4">
-              <li>
-                <Link
-                  className="text-white  transition hover:text-white/75 uppercase "
-                  href="https://www.instagram.com/raul_sigoli/"
-                  target="_blank"
-                >
-                  <SlSocialInstagram />
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  className="text-white transition hover:text-white/75 uppercase"
-                  href="https://br.pinterest.com/"
-                  target="_blank"
-                >
-                  <SlSocialPintarest />
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  className="text-white transition hover:text-white/75 uppercase"
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                >
-                  <SlSocialFacebook />
-                </Link>
-              </li>
-            </ul>
+            <Sociais />
           </div>
         </div>
       </div>
