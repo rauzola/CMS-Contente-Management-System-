@@ -1,4 +1,3 @@
-import React from "react";
 import Navigation from "@/components/nav";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,11 +10,8 @@ interface Projeto {
   imagens_slug: string[];
 }
 
-
-// Agora você pode usar a interface Projeto para tipar o array de projetos
 const projetos: Projeto[] = projetosData;
 
-// Em seguida, você pode usar a tipagem para projetos em seu código, por exemplo:
 export default function Projetos() {
   return (
     <>
@@ -26,27 +22,30 @@ export default function Projetos() {
             Projetos
           </h2>
           <p className="mt-4 text-zinc-400">
-            Alguns dos projetos são do trabalho e outros são feitos no meu tempo livre.
+            Alguns dos projetos são do trabalho e outros são feitos no meu tempo
+            livre.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projetos.map((projeto) => (
-            <div key={projeto.id} className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 overflow-hidden">
-              <Link href={`projetos/${projeto.id}`} passHref>
-                <div style={{ position: 'relative', cursor: 'pointer' }}>
-                  <Image
-                    src={projeto.image}
-                    alt={`Projeto ${projeto.id}`}
-                    layout="responsive"
-                    width={400}
-                    height={300}
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-              </Link>
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+          {projetos.map((projeto, index) => (
+            <div key={projeto.id} className={`grid gap-4 ${index === projetos.length - 1 ? 'mb-24' : ''}`}>
+              <div>
+                <Link href={`projetos/${projeto.id}`} passHref>
+                  <div>
+                    <Image
+                      src={projeto.image}
+                      alt={`Projeto ${projeto.name}`}
+                      layout="responsive"
+                      width={400}
+                      height={300}
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
