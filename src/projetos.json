@@ -1,30 +1,46 @@
 [
   {
-    "id": 7,
-    "name": "Celso Pilati",
-    "image": {
-      "1": "/image/Celso Pilati -0007.jpg"
-    }
+    "id": "Celso_Pilati",
+    "name": "Celso_Pilati",
+    "image": "/image/Celso Pilati -0007.jpg",
+    "imagens_slug": [
+      "/image/Celso Pilati -0007.jpg",
+      "/image/Celso Pilati -0016.jpg",
+      "/image/Celso Pilati -0019.jpg",
+      "/image/Celso Pilati -0041.jpg"
+    ]
   },
   {
-    "id": 3184,
+    "id": "MK_CarolinaReis_AptoSplendido",
     "name": "MK_CarolinaReis_AptoSplendido",
-    "image": {
-      "1": "/image/MK_CarolinaReis_AptoSplendido-3184.jpg"
-    }
+    "image": "/image/MK_CarolinaReis_AptoSplendido-3184.jpg",
+    "imagens_slug": [
+      "/image/Celso Pilati -0007.jpg",
+      "/image/Celso Pilati -0016.jpg",
+      "/image/Celso Pilati -0019.jpg",
+      "/image/Celso Pilati -0041.jpg"
+    ]
   },
   {
-    "id": 16,
-    "name": "16",
-    "image": {
-      "1": "/image/Celso Pilati -0016.jpg"
-    }
+    "id": "16_Celso_Pilati",
+    "name": "16_Celso_Pilati",
+    "image": "/image/Celso Pilati -0016.jpg",
+    "imagens_slug": [
+      "/image/Celso Pilati -0007.jpg",
+      "/image/Celso Pilati -0016.jpg",
+      "/image/Celso Pilati -0019.jpg",
+      "/image/Celso Pilati -0041.jpg"
+    ]
   },
   {
-    "id": 3192,
-    "name": "3192",
-    "image": {
-      "1": "/image/MK_CarolinaReis_AptoSplendido-3192.jpg"
-    }
+    "id": "3192_MK_CarolinaReis_AptoSplendido",
+    "name": "3192_MK_CarolinaReis_AptoSplendido",
+    "image": "/image/MK_CarolinaReis_AptoSplendido-3192.jpg",
+    "imagens_slug": [
+      "/image/Celso Pilati -0007.jpg",
+      "/image/Celso Pilati -0016.jpg",
+      "/image/Celso Pilati -0019.jpg",
+      "/image/Celso Pilati -0041.jpg"
+    ]
   }
 ]

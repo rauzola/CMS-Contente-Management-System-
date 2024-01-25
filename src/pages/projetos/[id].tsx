@@ -1,24 +1,23 @@
-import React from "react";
+import projetosData from "../../projetos.json";
+import { useRouter } from 'next/router';
 
-export default function Contato(props: { params: { id: string } }) {
-  const { params } = props;
-  
+export default function Contato() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Encontrar o projeto correspondente ao ID
+  const projeto = projetosData.find((projeto) => projeto.id === id);
+
+  if (!projeto) {
+    return <div>Projeto não encontrado</div>;
+  }
+
   return (
-    <>
-      <h1>noticiaaaa {params.id}</h1>
-    </>
+    <div>
+      <h1>{projeto.name}</h1>
+      <p>ID: {projeto.id}</p>
+      <p>Image: {projeto.image}</p>
+      <p>Imagens Slug: {projeto.imagens_slug.join(", ")}</p>
+    </div>
   );
-}
-
-// Esta função é executada no servidor para gerar a página
-export async function getServerSideProps(context: any) {
-  const { params } = context;
-  
-  // Pode fazer algumas lógicas aqui se necessário
-
-  return {
-    props: {
-      params,
-    },
-  };
 }

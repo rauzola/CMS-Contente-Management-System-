@@ -4,6 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import projetosData from "../../projetos.json";
 
+interface Projeto {
+  id: string;
+  name: string;
+  image: string;
+  imagens_slug: string[];
+}
+
+
+// Agora você pode usar a interface Projeto para tipar o array de projetos
+const projetos: Projeto[] = projetosData;
+
+// Em seguida, você pode usar a tipagem para projetos em seu código, por exemplo:
 export default function Projetos() {
   return (
     <>
@@ -20,23 +32,21 @@ export default function Projetos() {
         <div className="w-full h-px bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projetosData.map((projeto) => (
+          {projetos.map((projeto) => (
             <div key={projeto.id} className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 overflow-hidden">
-              {Object.values(projeto.image).map((imageSrc, index) => (
-                <div key={index} className="relative w-full h-48 md:h-64 lg:h-80">
-                  <Link href={`projetos/${projeto.id}`} passHref>
-                    <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, cursor: 'pointer' }}>
-                      <Image
-                        src={imageSrc}
-                        alt={`Projeto ${projeto.id}`}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-lg"
-                      />
-                    </div>
-                  </Link>
+              <Link href={`projetos/${projeto.id}`} passHref>
+                <div style={{ position: 'relative', cursor: 'pointer' }}>
+                  <Image
+                    src={projeto.image}
+                    alt={`Projeto ${projeto.id}`}
+                    layout="responsive"
+                    width={400}
+                    height={300}
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
                 </div>
-              ))}
+              </Link>
             </div>
           ))}
         </div>
