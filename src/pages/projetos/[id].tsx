@@ -29,21 +29,28 @@ export default function Contato() {
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
-
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-          {projeto.imagens_slug.map((imagemSlug, index) => (
-            <div key={index} className={`rounded-lg overflow-hidden ${index === projeto.imagens_slug.length - 1 ? 'mb-24' : ''}`}>
-              <Image
-                layout="responsive"
-                objectFit="cover"
-                src={imagemSlug}
-                alt={`Imagem ${index}`}
-                width={500}
-                height={300}
-              />
-            </div>
-          ))}
-        </div>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-16">
+        {projeto.imagens_slug.map((imagemSlug, index) => (
+          <div
+            key={index}
+            className={`rounded-lg overflow-hidden ${
+              index === projeto.imagens_slug.length - 1 ? "mb-24" : ""
+            }`}
+            style={{ marginLeft: "5%", marginRight: "5%", marginTop: "5%"}}
+          >
+            <Image
+              layout="responsive"
+              objectFit="cover"
+              src={imagemSlug}
+              alt={`Imagem ${index}`}
+              width={500}
+              height={300}
+              quality={100}
+            />
+          </div>
+        ))}
       </div>
     </>
   );
