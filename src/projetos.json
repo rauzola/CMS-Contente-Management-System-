@@ -1,9 +1,10 @@
 [
   {
     "id": "Celso_Pilati",
-    "name": "Celso_Pilati",
-    "image": "/image/Celso Pilati -0007.jpg",
+    "name": "Celso Pilati",
+    "thumbnail": "/image/Celso Pilati -0007.jpg",
     "imagens_slug": [
+      "/image/Celso Pilati -0007.jpg",
       "/image/Celso Pilati -0831.jpg",
       "/image/Celso Pilati -0791.jpg",
       "/image/Celso Pilati -0741.jpg",
@@ -18,8 +19,8 @@
   },
   {
     "id": "MK_CarolinaReis_AptoSplendido",
-    "name": "MK_AptoSplendido",
-    "image": "/image/MK_CarolinaReis_AptoSplendido-3744.jpg",
+    "name": "Apartamento Splendido",
+    "thumbnail": "/image/MK_CarolinaReis_AptoSplendido-3744.jpg",
     "imagens_slug": [
       "/image/MK_CarolinaReis_AptoSplendido-3744.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3736.jpg",
@@ -35,9 +36,10 @@
   },
   {
     "id": "16_Celso_Pilati",
-    "name": "16_Celso_Pilati",
-    "image": "/image/Celso Pilati -0016.jpg",
+    "name": "Celso Pilati - 1",
+    "thumbnail": "/image/Celso Pilati -0016.jpg",
     "imagens_slug": [
+      "/image/Celso Pilati -0016.jpg",
       "/image/Celso Pilati -0831.jpg",
       "/image/Celso Pilati -0791.jpg",
       "/image/Celso Pilati -0741.jpg",
@@ -52,9 +54,10 @@
   },
   {
     "id": "3192_MK_CarolinaReis_AptoSplendido",
-    "name": "3192_MK_AptoSplendido",
-    "image": "/image/MK_CarolinaReis_AptoSplendido-3192.jpg",
+    "name": "Apartamento Splendido - MK",
+    "thumbnail": "/image/MK_CarolinaReis_AptoSplendido-3192.jpg",
     "imagens_slug": [
+      "/image/MK_CarolinaReis_AptoSplendido-3192.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3744.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3736.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3727.jpg",
@@ -69,9 +72,10 @@
   },
   {
     "id": "0831_Celso_Pilati",
-    "name": "0831_Celso_Pilati",
-    "image": "/image/Celso Pilati -0490.jpg",
+    "name": "Celso Pilati - 2",
+    "thumbnail": "/image/Celso Pilati -0490.jpg",
     "imagens_slug": [
+      "/image/Celso Pilati -0490.jpg",
       "/image/Celso Pilati -0831.jpg",
       "/image/Celso Pilati -0791.jpg",
       "/image/Celso Pilati -0741.jpg",
@@ -79,16 +83,16 @@
       "/image/Celso Pilati -0666.jpg",
       "/image/Celso Pilati -0586.jpg",
       "/image/Celso Pilati -0546.jpg",
-      "/image/Celso Pilati -0490.jpg",
       "/image/Celso Pilati -0471.jpg",
       "/image/Celso Pilati -0461.jpg"
     ]
   },
   {
     "id": "3744_MK_CarolinaReis_AptoSplendido",
-    "name": "3744_MK_AptoSplendido",
-    "image": "/image/MK_CarolinaReis_AptoSplendido-3604.jpg",
+    "name": "Apartamento Splendido - MK 1",
+    "thumbnail": "/image/MK_CarolinaReis_AptoSplendido-3604.jpg",
     "imagens_slug": [
+      "/image/MK_CarolinaReis_AptoSplendido-3604.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3744.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3736.jpg",
       "/image/MK_CarolinaReis_AptoSplendido-3727.jpg",

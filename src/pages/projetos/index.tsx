@@ -2,11 +2,12 @@ import Navigation from "@/components/nav";
 import Image from "next/image";
 import Link from "next/link";
 import projetosData from "../../projetos.json";
+import Head from "next/head";
 
 interface Projeto {
   id: string;
   name: string;
-  image: string;
+  thumbnail: string;
   imagens_slug: string[];
 }
 
@@ -15,6 +16,9 @@ const projetos: Projeto[] = projetosData;
 export default function Projetos() {
   return (
     <>
+    <Head>
+        <title>Projetos</title>
+      </Head>
       <Navigation />
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
         <div className="max-w-2xl mx-auto lg:mx-0">
@@ -35,7 +39,7 @@ export default function Projetos() {
                 <Link href={`projetos/${projeto.id}`} passHref>
                   <div>
                     <Image
-                      src={projeto.image}
+                      src={projeto.thumbnail}
                       alt={`Projeto ${projeto.name}`}
                       layout="responsive"
                       width={400}
